@@ -10,5 +10,12 @@ void bubble_sort(int a[], int n) {
     }
 }
 
+int main() {
+    int a[] = {4, 2, 0, 7};
+    int n = sizeof(a) /sizeof(a[0]);
+    bubble_sort(a, n);
+    return 0;
+}
+
 //Эт сортировка лмао
 //Уээээээ
