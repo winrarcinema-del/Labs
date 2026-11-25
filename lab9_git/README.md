@@ -105,4 +105,35 @@ git push
 
 ### Часть 2. Ветки
 
-*[Этот раздел будет заполнен после выполнения шагов с веткой mybranch.]*
+# Скриншоты работы с ветками
+
+![branch list](img/3/ИМЯ_ФАЙЛА.png)
+Список веток.
+
+![status mybranch](img/3/ИМЯ_ФАЙЛА.png)
+status на mybranch.
+
+## Оценка 4
+
+### git diff и git diff --staged
+![diff](img/4/41_diff.png)
+После изменения sort.c git diff показывает добавленные строки, а git diff --staged пуст: в stage ничего нет.
+
+![diff staged](img/4/44_diff_staged.png)
+После git add картина обратная: git diff пуст, git diff --staged показывает изменения.
+
+Объяснение. git diff сравнивает рабочую папку со stage, git diff --staged сравнивает stage с последним коммитом. После второго изменения файл существует в трёх состояниях: коммит, stage и рабочая папка, поэтому diff'ы показывают разное, и в git status файл sort.c виден дважды.
+
+### git restore
+![restore](img/4/48_status_after_restore.png)
+git restore --staged sort.c убрал файл из stage, правки в файле остались.
+
+git restore sort.c отменил незакоммиченную правку (printf), файл вернулся к последнему коммиту.
+
+### Ветки и fast-forward
+![ff merge](img/4/ff/ff_06_merge.png)
+Ветка feature/uppercase слита в main в режиме fast-forward: main просто передвинулся вперёд, отдельного коммита слияния не создавалось, потому что main не расходился с веткой.
+
+### Слияние mybranch в main
+![graph](img/4/ff/ff_10_graph.png)
+Ветка mybranch слита в main, на графе видна точка слияния.
